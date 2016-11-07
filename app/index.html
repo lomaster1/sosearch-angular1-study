@@ -1,0 +1,50 @@
+<!doctype html>
+<html ng-app="SOSearch">
+
+<head>
+	<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+		crossorigin="anonymous">
+	<link rel="stylesheet" href="/css/main.css">
+	<!--<base href="/">-->
+</head>
+
+<body ng-controller="AppCtrl">
+
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#!/">Поиск по StackOverflow</a>
+			</div>
+		</div>
+	</nav>
+
+	<div class="page-container container" >
+		<div class="page" ng-view></div>
+	</div>
+
+	<!--Для IE9-->
+	<script src="bower_components/jpillora/xhook/dist/xhook.js"></script>
+	<script src="js/xhook-before.js"></script>
+
+	<script src="bower_components/jquery/dist/jquery.js"></script>
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/angular-route/angular-route.js"></script>
+	<script src="bower_components/angular-resource/angular-resource.js"></script>
+	<script src="bower_components/angular-animate/angular-animate.js"></script>
+	<script src="bower_components/angular-animate/angular-animate.js"></script>
+	 
+	<script src="js/app.js"></script>
+	<script src="js/app.config.js"></script>
+	<script src="js/app.ctrl.js"></script>
+	<script src="js/app-key-nav.js"></script>
+	<script src="js/app.animations.js"></script>
+	<script src="js/Stackoverflow.service.js"></script>
+	<script src="js/search-form/search-form.component.js"></script>
+	<script src="js/questions-table/questions-table.component.js"></script>
+	<script src="js/questions-table/questions-table.animation.js"></script>
+	<script src="js/search-result/search-result.component.js"></script>
+	<script src="js/question-details/question-details.component.js"></script>
+</body>
+
+</html>

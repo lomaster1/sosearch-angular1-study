@@ -1,0 +1,19 @@
+{
+  "name": "sosearch",
+  "description": "",
+  "main": "index.html",
+  "authors": [
+    "Shamov Andrew"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "dependencies": {
+    "angular": "1.5.8",
+    "angular-route": "1.5.8",
+    "angular-animate": "1.5.8",
+    "angular-resource": "1.5.8",
+    "bootstrap": "3.3.7",
+    "jpillora/xhook": "1.3.5",
+    "jquery": "3.1.1"
+  }
+}

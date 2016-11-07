@@ -1,0 +1,44 @@
+<table class="table table-striped" ng-class="{'focused': $ctrl.focused}">
+	<thead>
+		<tr>
+			<th ng-click="$ctrl.sort('owner.display_name')" ng-class="{'active': ($ctrl.activeRow == 0 && $ctrl.activeCell == 0)}">
+				Автор
+				<i class="glyphicon" ng-class="{'glyphicon-sort-by-alphabet': $ctrl.isSorted('owner.display_name', false),
+											    'glyphicon-sort-by-alphabet-alt': $ctrl.isSorted('owner.display_name', true)}"></i>
+			</th>
+			<th ng-click="$ctrl.sort('title')" ng-class="{'active': ($ctrl.activeRow == 0 && $ctrl.activeCell == 1)}">
+				Заголовок
+				<i class="glyphicon" ng-class="{'glyphicon-sort-by-alphabet': $ctrl.isSorted('title', false),
+											    'glyphicon-sort-by-alphabet-alt': $ctrl.isSorted('title', true)}"></i>
+			</th>
+			<th ng-click="$ctrl.sort('answer_count')" ng-class="{'active': ($ctrl.activeRow == 0 && $ctrl.activeCell == 2)}">
+				Ответов
+				<i class="glyphicon" ng-class="{'glyphicon-sort-by-order': $ctrl.isSorted('answer_count', false),
+											    'glyphicon-sort-by-order-alt': $ctrl.isSorted('answer_count', true)}"></i>
+			</th>
+			<th ng-click="$ctrl.sort('tags.length')" ng-class="{'active': ($ctrl.activeRow == 0 && $ctrl.activeCell == 3)}">
+				Теги
+				<i class="glyphicon" ng-class="{'glyphicon-sort-by-attributes': $ctrl.isSorted('tags.length', false),
+											    'glyphicon-sort-by-attributes-alt': $ctrl.isSorted('tags.length', true)}"></i>
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="questions-table-row" ng-repeat="question in $ctrl.items | orderBy:$ctrl.sortField:$ctrl.sortInvert">
+			<td ng-class="{'active': ($ctrl.activeRow == ($index+1) && $ctrl.activeCell == 0)}">
+				<a href="" ng-click="$ctrl.clickByUser(question.owner.user_id)">{{question.owner.display_name}}</a>
+			</td>
+			<td ng-class="{'active': ($ctrl.activeRow == ($index+1) && $ctrl.activeCell == 1)}">
+				<a href="" ng-click="$ctrl.clickByTitle(question.question_id)">{{question.title}}</a>
+			</td>
+			<td ng-class="{'active': ($ctrl.activeRow == ($index+1) && $ctrl.activeCell == 2)}">
+				<a href="" ng-click="$ctrl.clickByTitle(question.question_id)">{{question.answer_count}}
+            </td>
+            <td ng-class="{'active': ($ctrl.activeRow == ($index+1) && $ctrl.activeCell == 3)}">
+			  <div ng-repeat="tag in question.tags">
+              	<a href="" ng-click="$ctrl.clickByTag(tag)">{{tag}}</a>
+				</div>
+			</td>
+		</tr>
+	</tbody>
+</table>

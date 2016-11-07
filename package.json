@@ -1,0 +1,14 @@
+{
+  "name": "sosearch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "superstatic app --port 8000"
+  },
+  "author": "Shamov Andrew",
+  "license": "MIT",
+  "devDependencies": {
+    "superstatic": "4.0.3"
+  }
+}

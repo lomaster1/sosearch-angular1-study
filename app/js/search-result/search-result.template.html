@@ -1,0 +1,20 @@
+<div class="row">
+	<div class="col-sm-6">
+		<questions-table
+			id="questions" 
+			items="$ctrl.items" 
+			on-author-click="$ctrl.showMostPopularQuestion('user', userId)"
+			on-title-click="$ctrl.showQuestionDetails(questionId)"
+			on-tag-click="$ctrl.showMostPopularQuestion('tag', tag)"
+			focused="$ctrl.focusedComponent === 'questions'"></questions-table>
+	</div>
+	<div class="col-sm-6" ng-show="$ctrl.mostPopularQuestion !== null">
+		<questions-table 
+			id="additional"
+			items="$ctrl.mostPopularQuestion" 
+			on-author-click="$ctrl.showMostPopularQuestion('user', userId)"
+			on-title-click="$ctrl.showQuestionDetails(questionId)"
+			on-tag-click="$ctrl.showMostPopularQuestion('tag', tag)"
+			focused="$ctrl.focusedComponent === 'additional'"></questions-table>
+	</div>
+</div>

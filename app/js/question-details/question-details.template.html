@@ -1,0 +1,13 @@
+<div>
+    <h4>{{$ctrl.questionInfo.title}}</h4>
+    <div ng-bind-html="$ctrl.renderHtml($ctrl.questionInfo.body)">
+    </div>
+</div>
+
+<div>
+    <h4>Ответы:</h4>
+    <div ng-repeat="answer in $ctrl.questionInfo.answers | orderBy:creation_date">
+        <h5><i class="glyphicon glyphicon-user"></i> {{answer.owner.display_name}} <small>{{answer.creation_date | date:'dd.MM.yyyy hh:mm'}}</small>:</h5>
+        <div ng-bind-html="$ctrl.renderHtml(answer.body)"></div>
+    </div>
+</div>
